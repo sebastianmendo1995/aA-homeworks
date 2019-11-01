@@ -1,8 +1,7 @@
 class Queue
-    attr_reader :ivar
-
-    def initialize(ivar=[])
-        @ivar = ivar
+    
+    def initialize
+        @ivar = []
     end
 
     def enqueue(el)
@@ -15,6 +14,17 @@ class Queue
     end
 
     def peek
-        ivar[0]
+        ivar.first
     end
+
+    def show
+        ivar.dup
+    end
+
+    def empty?
+        ivar.empty?
+    end
+
+    private
+    attr_reader :ivar
 end

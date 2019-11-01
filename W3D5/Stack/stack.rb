@@ -1,8 +1,7 @@
 class Stack
-    attr_reader :ivar
 
-    def initialize(ivar=[])
-        @ivar = ivar
+    def initialize
+        @ivar = []
     end
 
     def push(el)
@@ -15,7 +14,17 @@ class Stack
     end
 
     def peek
-        ivar[-1]
+        ivar.last
     end
 
+    def show
+        ivar.dup
+    end
+
+    def empty?
+        ivar.empty?
+    end
+
+    private
+    attr_reader :ivar
 end

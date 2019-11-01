@@ -1,8 +1,7 @@
 class Map
-    attr_reader :my_map
 
-    def initialize(arr=[])
-        @my_map = arr
+    def initialize
+        @my_map = []
     end
 
     def set(key,value)
@@ -15,7 +14,7 @@ class Map
         else
             my_map << [key,value]
         end
-        my_map
+        [key,value]
     end
 
     def has_key?(key)
@@ -30,4 +29,10 @@ class Map
         my_map.delete_if{|sub| sub[0] == key}
     end
 
+    def show
+        my_map.dup
+    end
+
+    private
+    attr_reader :my_map
 end
