@@ -59,7 +59,7 @@ class Board
     #first i have to check if it end on current player cup
     if ending_cup_idx == 6 || ending_cup_idx == 13
       return :prompt
-    elsif cups[ending_cup_idx].empty?
+    elsif cups[ending_cup_idx].count == 1
       return :switch
     else
       return ending_cup_idx
